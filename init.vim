@@ -154,3 +154,6 @@ nnoremap <leader>ps :Rg<SPACE>
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>gs :GFiles?<CR>
 nnoremap <leader>\ :vsp<CR>
+nnoremap <leader>e :Ex<CR>
+nnoremap <leader>ph :noh<CR>
+:set ignorecase
