@@ -18,6 +18,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ervandew/supertab'
 Plug 'chriskempson/base16-vim'
 Plug 'mattn/emmet-vim'
+Plug 'APZelos/blamer.nvim'
 
 " Elixir plugs
 Plug 'elixir-editors/vim-elixir'
@@ -54,6 +55,11 @@ let NERDTreeAutoDeleteBuffer = 1 " Auto delete buffer when files/folders are del
 let NERDTreeQuitOnOpen = 1 " Auto close NERDTree when open a file
 let NERDTreeMinimalUI = 1
 map <leader>\ :NERDTreeToggle<CR>
+
+" Enable Git Blamer
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+let g:blamer_relative_time = 1
 
 " Settings for Coc
 " show hints/documentations
