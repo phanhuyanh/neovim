@@ -157,3 +157,6 @@ nnoremap <leader>\ :vsp<CR>
 nnoremap <leader>e :Ex<CR>
 nnoremap <leader>ph :noh<CR>
 :set ignorecase
+
+" Set rawtime exceeded
+set redrawtime=10000
