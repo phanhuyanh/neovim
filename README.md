@@ -1,1 +1,5 @@
 # neovim
+
+### Install
+  - ``` :PlugInstall ```
+  - ``` source ~ ```
