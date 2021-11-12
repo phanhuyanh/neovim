@@ -9,16 +9,15 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive' 
 Plug 'terryma/vim-multiple-cursors'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'build': './install --all', 'merged': 0 }
 Plug 'junegunn/fzf.vim', { 'depends': 'fzf' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ervandew/supertab'
 Plug 'chriskempson/base16-vim'
-Plug 'mattn/emmet-vim'
 Plug 'APZelos/blamer.nvim'
+Plug 'leafOfTree/vim-vue-plugin'
 
 " Elixir plugs
 Plug 'elixir-editors/vim-elixir'
@@ -29,6 +28,7 @@ Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'maxmellon/vim-jsx-pretty'
 
 call plug#end()
 
@@ -56,10 +56,25 @@ let NERDTreeQuitOnOpen = 1 " Auto close NERDTree when open a file
 let NERDTreeMinimalUI = 1
 map <leader>\ :NERDTreeToggle<CR>
 
-" Enable Git Blamer
+" Enable Git blamer
 let g:blamer_enabled = 1
 let g:blamer_delay = 500
 let g:blamer_relative_time = 1
+
+" Config Vue plugin
+let g:vim_vue_plugin_config = { 
+      \'syntax': {
+      \   'template': ['html'],
+      \   'script': ['javascript'],
+      \   'style': ['css', 'sass', 'scss', 'less'],
+      \},
+      \'full_syntax': [],
+      \'initial_indent': [],
+      \'attribute': 0,
+      \'keyword': 0,
+      \'foldexpr': 0,
+      \'debug': 0,
+      \}
 
 " Settings for Coc
 " show hints/documentations
@@ -117,7 +132,7 @@ set hlsearch " Highlight search
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set updatetime=100
 set colorcolumn=100
-set list listchars=tab:▸\ ,eol:$,trail:·
+set list listchars=tab:‚ñ∏\ ,eol:$,trail:¬∑
 
 " Enable true colors support
 if (has("termguicolors"))
@@ -155,8 +170,17 @@ nnoremap <leader>ff :Files<CR>
 nnoremap <leader>gs :GFiles?<CR>
 nnoremap <leader>\ :vsp<CR>
 nnoremap <leader>e :Ex<CR>
-nnoremap <leader>ph :noh<CR>
+nnoremap <leader>mm :noh<CR>
 :set ignorecase
+
+" Try Telescopte
+nnoremap <leader>tl <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Open current file in Chrome browser
+nnoremap <leader>M :!open % -a Google\ Chrome<CR>
 
 " Set rawtime exceeded
 set redrawtime=10000
