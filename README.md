@@ -2,4 +2,4 @@
 
 ### Install
   - ``` :PlugInstall ```
-  - ``` source ~ ```
+  - ``` source ```
